@@ -1,0 +1,105 @@
+<html>
+   <head>
+      <title>Recipes Food App</title>
+      <meta charset="UTF-8">
+      <meta name = "description" content="Recipes Food">
+      <meta name = "kaywords" content="Recipes Food">
+      <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500&family=Alegreya:wght@500&family=Inspiration&family=Lobster&family=Oleo+Script&family=Oleo+Script+Swash+Caps:wght@700&family=Poppins:wght@400;600;700&family=Source+Sans+Pro:wght@600;900&family=Yeseva+One&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/all.min.css">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/test.css">
+   </head>
+   <body>
+
+<!--------------------------------------Header------------------------------------>
+<header id="hidden" class="min-vh-100">
+      <section class="min-vh-100 bg-caption d-flex justify-content-center align-items-center">
+         <div class="container">
+            <div class="caption text-center">
+               <span class="fs-2 text-white">Welcome..</span>
+               <h2 class="fw-bold my-3">Today's Meal</h2>
+               <p class="fs-2 text-white">The shortest way to any person's heart is through his stomach</p>
+            </div>
+         </div>
+      </section>
+</header>
+
+
+<!-----------------------------------Navbar----------------------------------->
+<nav id="navbar" class="navbar navbar-expand-lg bg-nav fixed-top p-3">
+   <div class="container">
+      <a id="logo" class="navbar-brand text-danger fw-bold fs-4">Today's Meal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <i class="fa-solid fa-bars fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mb-2 mb-lg-0 w-75 ms-auto d-flex justify-content-between align-items-center">
+            <li class="nav-item">
+               <a class="nav-link active" href="#show" aria-current="page">Pizza</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#show">Pasta</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#show">Hamburger</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#show">Ice cream</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#show">Popcorn</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#show">Seafood</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#show">Blueberry</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#show">Cake</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+</nav>
+
+
+<!---------------------------------------------show The Data----------------------------------------------->
+<section id="show" class="my-5 d-none">
+   <div class="container d-flex justify-content-center align-items-center">
+      <div class="title">
+         <h1 class="text-center mt-5 mb-2 fw-bold">Recipes List</h1>
+         <!-- <p class="mb-3 text-center fs-5 fw-bold">Enter Your order..</p> -->
+         <input type="search" id="search" class="form-control w-50 mx-auto p-2 text-center my-3 bg-input fs-6" placeholder="Enter Your order (meal)..">
+         <!-- <p id="alert" class="alert alert-danger text-center fs-5 fw-bold w-50 mx-auto p-0"></p> -->
+         <div id="car" class="row gx-3">
+            
+         </div>
+      </div>
+   </div>
+</section>
+
+
+<!-------------------------------------------------Modal----------------------------------------->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Meal Details</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body" id="showModal">
+            
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<!--------------------------------------------------JS files---------------------------------------->
+      <script src="js/all.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/main.js"></script>
+
+   </body>
+</html>

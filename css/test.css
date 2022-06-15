@@ -1,0 +1,67 @@
+
+header{
+    background-image: url(../img/full-2-800x640.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.navbar a{
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.navbar .nav-item a:hover{
+    color:crimson;
+}
+.bg-nav{
+    background-color: rgba(0, 0, 0, 0.604);
+}
+.navbar-brand{
+    font-family: 'Oleo Script', cursive;
+}
+.navbar .navbar-toggler{
+    color: #fff;
+    transition: all 0.25s;
+}
+.navbar button svg{
+    font-size: 1.5rem !important;
+}
+.navbar .navbar-toggler:focus,
+ .navbar .navbar-toggler:hover
+{
+    box-shadow: none;
+}
+.bg-caption{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.caption h2{
+    font-family: 'Oleo Script', cursive;
+    font-size: 5rem;
+}
+.caption p, .caption span{
+    font-family: 'Oleo Script', cursive;
+}
+h1 , h2{
+    color:crimson;
+}
+
+
+.bg-input{
+    background-color: rgba(220, 20, 60, 0.338);
+}
+.form-control:focus{
+    background-color: rgba(220, 20, 60, 0.338) !important;
+    box-shadow:0 0 0 .075rem #24353f !important;
+}
+input::placeholder{
+    color: rgba(0, 0, 0, 0.75) !important;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 992px) {
+    .navbar-collapse .navbar-nav{
+        margin: 0 auto 1rem!important;
+    }
+}
