@@ -1,37 +1,30 @@
 
 //....................Selectors...................
 
-var anchors = Array.from(document.querySelectorAll('ul li a'));
-var showData = document.getElementById('show');
-var searchInput = document.getElementById('search');
-var member = document.getElementById('car');
-var meals = [];
-var currentMeal;
-var showModal = document.getElementById('showModal');
-var result;
 var hidden = document.getElementById('hidden');
-// var alert = document.getElementById('alert');
 var navbar = document.getElementById('navbar');
 var logo = document.getElementById('logo');
+
+var links = Array.from(document.querySelectorAll('ul li a'));
+var showData = document.getElementById('show');
+var searchInput = document.getElementById('search');
+
+var currentMeal;
+var member = document.getElementById('car');
+var meals = [];
+var showModal = document.getElementById('showModal');
+var result;
 
 
 //............call API for GET the data and show it............ 
 
-for(var i = 0; i < anchors.length; i++){
-    anchors[i].addEventListener('click' , function (e) {
+for(var i = 0; i < links.length; i++){
+    links[i].addEventListener('click' , function (e) {
         currentMeal = e.target.text.toLowerCase();
         getAllRecipes(currentMeal);
         showData.classList.replace('d-none','d-block');
         hidden.classList.add('d-none');
     })
-}
-
-async function getAllRecipes(index){
-    var myHttp = await fetch(`https://forkify-api.herokuapp.com/api/search?q=${index}`)
-    myHttp = await myHttp.json();
-    meals = myHttp.recipes;
-    // console.log(meals);
-    displayData();
 }
 
 
@@ -51,21 +44,19 @@ searchInput.addEventListener('input' , function (){
 })
 
 
-//............call API for GET the data and show it in popup............ 
+// .........................................call Api.................................
 
-async function getRecipeModal(index){
-    result = await fetch(`https://forkify-api.herokuapp.com/api/get?rId=${index}`);
-    result = await result.json();
-    displayModal();
-}
-
-function displayModal(){
-    var row =
-    `
-    <img src="${result.recipe.image_url}" class="w-100 h-50" alt="">
-    <h3 class="text-center my-3 bg-warning text-black w-75 mx-auto p-2">${result.recipe.title}</h3>
-    `
-    showModal.innerHTML = row;
+async function getAllRecipes(index){
+    try
+    {
+        var myHttp = await fetch(`https://forkify-api.herokuapp.com/api/search?q=${index}`);
+        myHttp = await myHttp.json();
+        meals = myHttp.recipes;
+        displayData();
+    }
+    catch (error) {
+        onerror = true;
+    }
 }
 
 
@@ -80,12 +71,36 @@ function displayData(){
                 <img src="${meals[i].image_url}" class="w-100 h-50" alt="">
                 <h3 class=" my-2">${meals[i].title}</h3>
                 <a target="_blank" href="${meals[i].source_url}" class="btn btn-primary text-decoration-none text-white">Source</a>
-                <a target="_blank" onclick='getRecipeModal(${meals[i].recipe_id})' data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-warning text-decoration-none text-white">Deteles</a>
+                <a target="_blank" onclick='getRecipeModal(${meals[i].recipe_id})' data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-warning text-decoration-none text-white">Details</a>
             </div>
         </div>
         `
     }
     member.innerHTML = row;
+}
+
+
+//............call API for GET the data and show it in popup............ 
+
+async function getRecipeModal(index){
+    try
+    {
+        result = await fetch(`https://forkify-api.herokuapp.com/api/get?rId=${index}`);
+        result = await result.json();
+        displayModal(result);
+    }
+    catch (error) {
+        onerror = true;
+    }
+}
+
+function displayModal(indexMeal){
+    var foo =
+    `
+    <img src="${indexMeal.recipe.image_url}" class="w-100 h-50" alt="">
+    <h3 class="text-center my-3 bg-warning text-black w-75 mx-auto p-2">${indexMeal.recipe.title}</h3>
+    `
+    showModal.innerHTML = foo;
 }
 
 
