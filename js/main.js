@@ -67,8 +67,8 @@ function displayData(){
     for(var i = 0; i < meals.length; i++){
         row +=
         `<div class="col-md-4">
-            <div class="mael p-3 text-center">
-                <img src="${meals[i].image_url}" class="w-100 h-50" alt="">
+            <div class="meal p-3 text-center">
+                <img src="${meals[i].image_url}" class="w-100" alt="">
                 <h3 class=" my-2">${meals[i].title}</h3>
                 <a target="_blank" href="${meals[i].source_url}" class="btn btn-primary text-decoration-none text-white">Source</a>
                 <a target="_blank" onclick='getRecipeModal(${meals[i].recipe_id})' data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-warning text-decoration-none text-white">Details</a>
@@ -97,7 +97,7 @@ async function getRecipeModal(index){
 function displayModal(indexMeal){
     var foo =
     `
-    <img src="${indexMeal.recipe.image_url}" class="w-100 h-50" alt="">
+    <img src="${indexMeal.recipe.image_url}" class="w-100" alt="">
     <h3 class="text-center my-3 bg-warning text-black w-75 mx-auto p-2">${indexMeal.recipe.title}</h3>
     `
     showModal.innerHTML = foo;

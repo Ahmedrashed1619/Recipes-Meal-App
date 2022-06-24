@@ -45,7 +45,9 @@ header{
 h1 , h2{
     color:crimson;
 }
-
+img{
+    height: 350px;
+}
 
 .bg-input{
     background-color: rgba(220, 20, 60, 0.338);
